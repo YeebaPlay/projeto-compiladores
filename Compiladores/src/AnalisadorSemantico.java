@@ -50,7 +50,7 @@ public class AnalisadorSemantico {
 	
 	public Object analisa(No no){
 		
-		System.out.println(no.getTipo());
+		//System.out.println(no.getTipo());
 		
 		if(no.getTipo().equals("NO_LISTA_CMD")) {
 			return listaComando(no);
@@ -83,7 +83,7 @@ public class AnalisadorSemantico {
 		} else if(no.getTipo().equals("NO_OP_ARIT")){
 			return opArit(no);
 		} else if(no.getTipo().equals("NO_EXP_ARIT")){
-			return opArit(no);
+			return expArit(no);
 		} else if(no.getTipo().equals("NO_OP_LOG")){
 			return opLog(no);
 		}

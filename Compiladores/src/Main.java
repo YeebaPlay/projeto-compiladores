@@ -13,7 +13,7 @@ public class Main {
 		    
 		    String nome = "/Users/viniciusgabriel/Documents/textoTeste.txt";
 		 
-		    System.out.println("\nConteúdo do arquivo texto:");
+		    //System.out.println("\nConteúdo do arquivo texto:");
 		    try {
 		      FileReader arq = new FileReader(nome);
 		      BufferedReader lerArq = new BufferedReader(arq);
@@ -21,14 +21,14 @@ public class Main {
 		      int indexLinha = 0;
 		      String linha = "";
 		      while (linha != null) {
-		        System.out.println(linha);
+		        //System.out.println(linha);
 		        linha = lerArq.readLine();
 		        if(linha != null){
 		        	analise.ReconhecerLinha(linha, indexLinha);
 			        indexLinha++;
 		        }
 		      }
-		      
+		      /*
 		      System.out.println("-------------------");
 		      System.out.println("Simbolos");
 		      
@@ -40,7 +40,7 @@ public class Main {
 		      System.out.println("Tokens");
 		      
 		      for(Token t: Token.lista){ System.out.println(t); }
-		 
+		      */
 		      arq.close();
 		      
 		      //Analisador Sintatico
@@ -49,8 +49,6 @@ public class Main {
 		      if(analisador.TemErros()){
 		    	  analisador.MostraErros();
 		    	  System.exit(0);
-		      }else{
-		    	  System.out.println("SUCESSO!!");
 		      }
 		      
 		      //analisador.MostraArvore();
@@ -61,9 +59,21 @@ public class Main {
 		      if(semantico.TemErros()){
 		    	  semantico.MostraErros();
 		    	  System.exit(0);
-		      }else{
-		    	  System.out.println("SUCESSO!!!");
 		      }
+		      
+		      //Executor
+		      Executor ex = new Executor(AnalisadorLexico.listaSimbolos);
+		      ex.Analisar(analisador.raiz);
+		      
+		      if(ex.TemErros()){
+		    	  ex.MostraErros();
+		    	  System.exit(0);
+		      }
+		      
+		      /*
+		      for(Simbolo sim : AnalisadorLexico.listaSimbolos){
+		    	  System.out.println("Imagem: " + sim.getImagem() +" Indice "+sim.getIndice() +" Valor: " + sim.getValor());
+		      }*/
 		      
 		    } catch (IOException e) {
 		        System.err.println("Erro na abertura do arquivo: %s.\n" +

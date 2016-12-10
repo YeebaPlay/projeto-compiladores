@@ -101,12 +101,22 @@ public class AnalisadorLexico {
 								Token.lista.add(token);
 							}
 						}else if(IsIdentificador(sim)){
+							
+							int indice = listaSimbolos.size();
+							
 							if(!ContemSimbolo(sim)){
 								quantidadeListaSimbolos = listaSimbolos.size();
 								Simbolo objSimbolo = new Simbolo();
-								objSimbolo.setIndice(quantidadeListaSimbolos - 1);
+								objSimbolo.setIndice(quantidadeListaSimbolos);
 								objSimbolo.setImagem(sim);
 								listaSimbolos.add(objSimbolo);
+							}else{
+								for(Simbolo x : listaSimbolos){
+									if(x.getImagem().equals(sim)) {
+										indice = x.getIndice();
+										break;
+									}
+								}
 							}
 							
 							Token token = new Token();
@@ -114,7 +124,7 @@ public class AnalisadorLexico {
 							token.setClasse("ID");
 							token.setLinha(indexLinha);
 							token.setColuna(coluna);
-							token.setIndice(listaSimbolos.size() - 1);
+							token.setIndice(indice);
 							Token.lista.add(token);
 					
 						}else if(IsOperador(sim)){

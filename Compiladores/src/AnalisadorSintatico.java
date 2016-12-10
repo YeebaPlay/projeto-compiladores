@@ -21,7 +21,7 @@ public class AnalisadorSintatico {
 	
 	public void leToken(){
 		token = listaToken.get(pToken++);
-		System.out.println(token.getImagem());
+		//System.out.println(token.getImagem());
 	}
 	
 	public boolean TemErros(){
