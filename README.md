@@ -64,7 +64,7 @@ $
 1 - Em uma mesma pasta coloque o arquivo jar e o .scp <br />
 2 - Abre o terminal <br />
 3 - Vá até a pasta com os dois arquivos utilizando o CD (dentro do terminal) <br />
-4 - Digite: java .jar compilador.jar linguagem.scp <br />
+4 - Digite: java -jar compilador.jar linguagem.scp <br />
 5 - Pronto!! O código que tiver dentro do linguagem.scp será executado <br />
 
 Obs: Você poderá abrir o arquivo .scp com qualquer editor de texto
