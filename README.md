@@ -3,7 +3,7 @@ Desenvolvimento de uma linguagem de programação nova, sem funções e classes,
 
 Linguagem desenvolvida na faculdade, com sintaxe totalmente diferente, tudo dentro de blocos { }, cada bloco de ação deve estar dentro das chaves, por exemplo: 
 
-#Ao mostrar uma mensagem no terminal digite <br />
+#Para mostrar uma mensagem no terminal digite <br />
 { mostra "Texto que quiser" } <br />
 { mostra variavel } <br />
 
