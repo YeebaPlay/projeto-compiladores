@@ -1,0 +1,14 @@
+# prog01 - fatorial em SCP
+# SCP (Script de chaves em portugues)
+
+{ int a b c }
+{ = a 10 }
+{ = b { = a 50 } }
+{ se { < b a } }
+{ { = c 10 } }
+{ { = c 20 } }
+{ texto saida }
+{ = saida "Resultado: " }
+{ mostra saida }
+{ mostra c }
+$
